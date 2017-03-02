@@ -38,10 +38,10 @@ class Solution(object):
         for i in range(high, low, -1):
             value = create_palindrome(i)
             for j in range(high, low, -1):
-                if value / j > high:
+                if value / j > high or j * j < value:
                     break
                 if value % j == 0:
-                    return value
+                    return value % 1337
         return -1
 
     def largestPalindrome2(self, n):
@@ -53,7 +53,8 @@ class Solution(object):
         return [9, 9009, 906609, 99000099, 9966006699, 999000000999,
                 99956644665999, 9999000000009999][n - 1] % 1337
 
+
 if __name__ == '__main__':
     s = Solution()
-    # print(s.largestPalindrome(7))
-    print(s.largestPalindrome2(8))
+    print(s.largestPalindrome(8))
+    # print(s.largestPalindrome2(8))
