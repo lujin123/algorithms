@@ -45,7 +45,7 @@ class Solution(object):
                 loop.append(num)
         return n == 1
 
-    def isHappy(self, n):
+    def isHappy2(self, n):
         """
         重复的数字中必定有4，所以可以直接判断，含有4，必定不是happy number
 
