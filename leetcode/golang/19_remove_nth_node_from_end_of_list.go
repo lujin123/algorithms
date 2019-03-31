@@ -18,11 +18,6 @@ package leetcode
 
 // 思路：用两个指针，第一个先跑n步，之后一起跑，第一个指针到底了，第一个指针就指向了待删除的元素，主要注意下头结点和尾节点删除的时候需要特殊处理下
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	p1 := head
 	var p2 *ListNode
@@ -46,39 +41,4 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 		head = nil
 	}
 	return head
-}
-
-func printList(head *ListNode) []int {
-	var res []int
-	p := head
-	for p != nil {
-		res = append(res, p.Val)
-		p = p.Next
-	}
-	return res
-}
-
-func createList(nums []int) *ListNode {
-	var head *ListNode
-	var p *ListNode
-	for _, val := range nums {
-		node := &ListNode{
-			Val: val,
-		}
-		if head == nil {
-			head = node
-			p = head
-		} else {
-			p.Next = node
-			p = node
-		}
-	}
-	return head
-}
-
-func calcListNode(nums []int, n int) []int {
-	head := createList(nums)
-	head = removeNthFromEnd(head, n)
-	res := printList(head)
-	return res
 }
