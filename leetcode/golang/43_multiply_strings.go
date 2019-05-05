@@ -39,7 +39,7 @@ func multiply(num1 string, num2 string) string {
 	for i := n2 - 1; i >= 0; i-- {
 		res := make([]int, max)
 		v := int(num2[i] - '0')
-		var curry int = 0
+		var curry int
 		for j := n1 - 1; j >= 0; j-- {
 			temp := v*s1[j] + curry
 			if temp > 9 {
@@ -58,7 +58,7 @@ func multiply(num1 string, num2 string) string {
 	// fmt.Printf("results: %v\n", results)
 
 	var ss []int
-	var curry int = 0
+	var curry int
 	for i := 0; i < max; i++ {
 		var temp int
 		for j := 0; j < n2; j++ {

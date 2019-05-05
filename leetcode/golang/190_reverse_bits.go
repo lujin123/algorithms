@@ -31,15 +31,13 @@ package leetcode
 如果多次调用这个函数，你将如何优化你的算法？
 */
 
-/**
-思路：定义结果变量res=0,左移一位，然后或上num的最后一位，num右移一位，去掉最后一位
-*/
-
+// 思路：定义结果变量res=0,左移一位，然后或上num的最后一位，num右移一位，去掉最后一位
 func reverseBits(num uint32) uint32 {
-	var res uint32 = 0
+	var res uint32
 	for i := 0; i < 32; i++ {
 		res = (res << 1) | (num & 1)
 		num >>= 1
 	}
+
 	return res
 }

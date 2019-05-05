@@ -80,21 +80,19 @@ func myAtoi(str string) int {
 	if len(stack) > 10 {
 		if flag == 1 {
 			return math.MinInt32
-		} else {
-			return math.MaxInt32
 		}
+		return math.MaxInt32
 	}
 
 	var step int32 = 1
-	var sum int32 = 0
+	var sum int32
 	for i := len(stack) - 1; i >= 0; i-- {
 		value := stack[i] * step
 		if step <= 0 || (step > 0 && math.MaxInt32/step < stack[i]) {
 			if flag == 1 {
 				return math.MinInt32
-			} else {
-				return math.MaxInt32
 			}
+			return math.MaxInt32
 		}
 		temp := sum + value
 		// fmt.Printf("str: %v, value: %v, temp: %v\n", str, value, temp)
@@ -102,18 +100,16 @@ func myAtoi(str string) int {
 		if temp < 0 || temp < sum {
 			if flag == 1 {
 				return math.MinInt32
-			} else {
-				return math.MaxInt32
 			}
+			return math.MaxInt32
 		}
 		sum = temp
 		step = step * 10
 	}
 	if flag == 1 {
 		return -int(sum)
-	} else {
-		return int(sum)
 	}
+	return int(sum)
 }
 
 // 来个更清晰简单点的
@@ -128,9 +124,8 @@ func myAtoi2(str string) int {
 			if sum > math.MaxInt32 {
 				if sign == 1 {
 					return math.MaxInt32
-				} else {
-					return math.MinInt32
 				}
+				return math.MinInt32
 			}
 		} else if !start {
 			if v == ' ' {

@@ -67,7 +67,6 @@ func simplifyPath(path string) string {
 			buffer.WriteString(v)
 		}
 		return buffer.String()
-	} else {
-		return "/"
 	}
+	return "/"
 }

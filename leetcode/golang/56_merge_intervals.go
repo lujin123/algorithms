@@ -53,7 +53,7 @@ func merge(intervals []Interval) []Interval {
 			res = append(res, interval)
 			interval = next
 		}
-		index += 1
+		index++
 	}
 	res = append(res, interval)
 	return res

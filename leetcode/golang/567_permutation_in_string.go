@@ -23,7 +23,6 @@ package leetcode
 
 // 思路：这题直接暴力求解估计是要TTL，所以只能想点别的方法
 // 1. 统计两个数组的词频，每次新增一个字母，就要判断下是否满足条件
-// 2. 在大佬极致的优化下，成功的去掉了对数组的遍历判断，直接对两个整数判断是否相等急了...厉害了
 func checkInclusion(s1 string, s2 string) bool {
 	n1 := len(s1)
 	n2 := len(s2)
@@ -55,6 +54,7 @@ func isZero(diff []int) bool {
 	return true
 }
 
+// 2. 在大佬极致的优化下，成功的去掉了对数组的遍历判断，直接对两个整数判断是否相等即可
 func checkInclusion2(s1 string, s2 string) bool {
 	n1 := len(s1)
 	n2 := len(s2)

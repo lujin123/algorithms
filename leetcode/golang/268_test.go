@@ -23,3 +23,10 @@ func TestSubmissions3(t *testing.T) {
 	assert.EqualValues(t, 0, missingNumber3([]int{3, 2, 1}))
 	assert.EqualValues(t, 8, missingNumber3([]int{9, 6, 4, 2, 3, 5, 7, 0, 1}))
 }
+
+func TestSubmissions4(t *testing.T) {
+	assert.EqualValues(t, 2, missingNumber4([]int{3, 0, 1}))
+	assert.EqualValues(t, 3, missingNumber4([]int{2, 0, 1}))
+	assert.EqualValues(t, 0, missingNumber4([]int{3, 2, 1}))
+	assert.EqualValues(t, 8, missingNumber4([]int{9, 6, 4, 2, 3, 5, 7, 0, 1}))
+}
