@@ -12,9 +12,24 @@ package leetcode
 输出: 4
 解释: 最长连续序列是 [1, 2, 3, 4]。它的长度为 4。
 */
-// func longestConsecutive(nums []int) int {
-// 	dpMap := make(map[int]int)
-// 	for _, val := range nums {
-// 		if
-// 	}
-// }
+func longestConsecutive(nums []int) int {
+	dpMap := make(map[int]int)
+	var ans int
+	for i := range nums {
+		if _, ok := dpMap[nums[i]]; !ok {
+			left := dpMap[nums[i]-1]
+			right := dpMap[nums[i]+1]
+
+			length := left + right + 1
+			if length > ans {
+				ans = length
+			}
+
+			dpMap[nums[i]] = length
+			dpMap[nums[i]-left] = length
+			dpMap[nums[i]+right] = length
+		}
+	}
+
+	return ans
+}
